@@ -18,7 +18,9 @@ module.exports = function (options) {
 
 	var fileCount = 0;
 	var remotePath = options.remotePath || '';
+    var serveFromZip = options.serveFromZip || false;
 	delete options.remotePath;
+    delete options.serveFromZip;
 
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
@@ -43,6 +45,14 @@ module.exports = function (options) {
 				cb(new gutil.PluginError('gulp-ftp', err, {fileName: file.path}));
 				return;
 			}
+            
+            if (serveFromZip) {
+                ftp.raw.site('az2z', function(err, data) {
+                    if (err) {
+                        console.log(err);
+                    }
+                });
+            }
 
 			ftp.put(file.contents, finalRemotePath, function (err) {
 				if (err) {

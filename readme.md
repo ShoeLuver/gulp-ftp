@@ -2,14 +2,13 @@
 
 > Upload files to an FTP-server
 
-Useful for uploading and deploying things.
+DSW forked utility for uploading Akamai netstorage artifacts via FTP.
 
 
 ## Install
 
 ```sh
-$ npm install --save-dev gulp-ftp
-```
+$ npm install --save-dev https://github.com/ShoeLuver/gulp-ftp/tarball/HEAD
 
 
 ## Usage
@@ -57,6 +56,11 @@ Default: `'@anonymous'`
 
 Type: `string`  
 Default: `'/'`
+
+#### options.serveFromZip
+
+Type: `boolean`  
+Default: `false`
 
 The remote path to upload too.
 
