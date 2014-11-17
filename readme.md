@@ -57,12 +57,13 @@ Default: `'@anonymous'`
 Type: `string`  
 Default: `'/'`
 
+The remote path to upload to.
+
 #### options.serveFromZip
 
 Type: `boolean`  
 Default: `false`
 
-The remote path to upload too.
 
 Doesn't have to exist as [jsftp-mkdirp](https://github.com/sindresorhus/jsftp-mkdirp) is used.
 
